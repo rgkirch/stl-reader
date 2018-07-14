@@ -24,6 +24,7 @@ dependencies:
 - GLUT
 - OpenGL
 - text
+- debug
 
 library:
   source-dirs: src

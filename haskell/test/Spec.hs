@@ -1,4 +1,4 @@
 import Lib
 
 main :: IO ()
-main = readPoints
+main = readPoints >>= putStrLn

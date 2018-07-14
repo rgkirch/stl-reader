@@ -1,0 +1,489 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tran",
+				"translated"
+			],
+			[
+				"combine",
+				"combineAll"
+			],
+			[
+				"Rende",
+				"RenderedNoun"
+			],
+			[
+				"Re",
+				"RenderedNoun"
+			],
+			[
+				"Rended",
+				"RendredNoun"
+			],
+			[
+				"rim",
+				"rendered_rim"
+			],
+			[
+				"pre",
+				"prependRim"
+			],
+			[
+				"prep",
+				"prependRim"
+			],
+			[
+				"prepend",
+				"prependFour"
+			],
+			[
+				"plu",
+				"plusOne"
+			],
+			[
+				"render",
+				"renderToString"
+			],
+			[
+				"swit",
+				"switch_rim"
+			],
+			[
+				"trans",
+				"translation"
+			],
+			[
+				"in",
+				"inside_width"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"neo",
+				"NeoVintageous: Changelog"
+			],
+			[
+				"about",
+				"About"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"show",
+				"LSP: Show Diagnostics"
+			],
+			[
+				"packagesetti",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"settings",
+				"Preferences: Settings"
+			],
+			[
+				"prefer",
+				"Preferences: LSP Settings"
+			],
+			[
+				"lsp",
+				"Preferences: LSP Settings"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"scheme",
+				"UI: Select Color Scheme"
+			],
+			[
+				"packagesettings",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"packagesettin",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"satis",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"pref",
+				"Preferences: Settings"
+			],
+			[
+				"add fol",
+				"Project: Add Folder"
+			],
+			[
+				"projec",
+				"Project: Add Folder"
+			],
+			[
+				"view",
+				"View: Toggle Minimap"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 606.0,
+		"history":
+		[
+			"sublime.log_commands(True)",
+			"sublime.log_commands(true)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/richie/Documents/github/stl-reader"
+	],
+	"file_history":
+	[
+		"/C/Users/richie/Documents/github/scala/.gitignore",
+		"/C/Users/richie/Documents/github/scala/src/library/scala/package.scala",
+		"/C/Users/richie/Documents/github/scala/src/library/scala/collection/package.scala",
+		"/C/Users/richie/Documents/github/shapeless/core/src/main/scala/shapeless/syntax/hlists.scala",
+		"/C/Users/richie/Documents/github/shapeless/core/src/main/scala/shapeless/sized.scala",
+		"/C/Users/richie/Documents/github/shapeless/core/src/main/scala/shapeless/syntax/sized.scala",
+		"/C/Users/richie/Documents/github/shapeless/examples/src/main/scala/shapeless/examples/sized.scala",
+		"/C/Users/richie/Documents/github/shapeless/core/src/main/scala/shapeless/ops/sizeds.scala",
+		"/C/Users/richie/Documents/github/scala/test/files/neg/t550.scala",
+		"/C/Users/richie/Documents/github/shapeless/core/src/test/scala/shapeless/monoid.scala",
+		"/C/Users/richie/Documents/github/scala/spec/07-implicits.md",
+		"/C/Users/richie/Documents/github/keyboard/scads/scads_ergo40.scad",
+		"/C/Users/richie/Documents/github/scala/src/library/scala/collection/Iterator.scala",
+		"/C/Users/richie/Documents/github/scala/src/compiler/scala/tools/nsc/Global.scala",
+		"/C/Users/richie/Documents/github/scala/src/library/scala/collection/IterableOnce.scala",
+		"/C/Users/richie/Documents/github/keyboard/scads/build.sbt",
+		"/C/Users/richie/Documents/github/keyboard/scads/src/main/scala/scad.scala",
+		"/C/Users/richie/Documents/github/keyboard/scads/src/test/scala/Ergo40Spec.scala",
+		"/C/Users/richie/Documents/github/shapeless/core/src/main/scala/shapeless/hlists.scala",
+		"/C/Users/richie/Documents/github/scala/test/files/neg/t3399.scala",
+		"/C/Users/richie/Documents/github/shapeless/core/src/main/scala/shapeless/nat.scala",
+		"/C/Users/richie/Documents/github/scala/test/files/pos/t5399.scala",
+		"/C/Users/richie/Documents/github/scala/test/files/pos/t5399a.scala",
+		"/C/Users/richie/Documents/github/shapeless/core/src/test/scala/shapeless/sized.scala",
+		"/C/Users/richie/Documents/github/shapeless/core/src/test/scala/shapeless/hlist.scala",
+		"/C/Users/richie/Documents/github/shapeless/core/src/main/scala/shapeless/ops/hlists.scala",
+		"/C/Users/richie/Documents/github/shapeless/core/src/main/scala/shapeless/package.scala",
+		"/C/Users/richie/Documents/github/scala/src/compiler/scala/tools/nsc/typechecker/ConstantFolder.scala",
+		"/C/Users/richie/Documents/github/scala/src/scalap/scala/tools/scalap/scalax/rules/Rule.scala",
+		"/C/Users/richie/Documents/github/shapeless/examples/src/main/scala/shapeless/examples/fold.scala",
+		"/C/Users/richie/Documents/github/scala/src/scalacheck/org/scalacheck/Gen.scala",
+		"/C/Users/richie/Documents/github/cats/core/src/main/scala/cats/data/NonEmptyList.scala",
+		"/C/Users/richie/AppData/Roaming/Sublime Text 3/Packages/NeoVintageous/CHANGELOG.md",
+		"/C/Users/richie/AppData/Roaming/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/C/Users/richie/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/richie/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 151.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 65.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.diagnostics":
+	{
+		"height": 329.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "project.sublime-project",
+	"replace":
+	{
+		"height": 68.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"scads",
+				"scads\\scads_ergo40.scad"
+			],
+			[
+				"ergo",
+				"scads\\src\\test\\scala\\Ergo40Spec.scala"
+			],
+			[
+				"ergoscad",
+				"scads\\scads_ergo40.scad"
+			],
+			[
+				".gitig",
+				"scala\\.gitignore"
+			],
+			[
+				"applicative",
+				"cats\\core\\src\\main\\scala\\cats\\Applicative.scala"
+			],
+			[
+				"sized",
+				"shapeless\\core\\src\\main\\scala\\shapeless\\ops\\sizeds.scala"
+			],
+			[
+				"scad.scal",
+				"scads\\src\\main\\scala\\scad.scala"
+			],
+			[
+				"ergospec",
+				"scads\\src\\test\\scala\\Ergo40Spec.scala"
+			],
+			[
+				"hlist",
+				"shapeless\\core\\src\\main\\scala\\shapeless\\ops\\hlists.scala"
+			],
+			[
+				"ergosp",
+				"scads\\src\\test\\scala\\Ergo40Spec.scala"
+			],
+			[
+				"nonemptylist",
+				"cats\\core\\src\\main\\scala\\cats\\data\\NonEmptyList.scala"
+			],
+			[
+				"fold",
+				"shapeless\\examples\\src\\main\\scala\\shapeless\\examples\\fold.scala"
+			],
+			[
+				"build",
+				"scads\\build.sbt"
+			],
+			[
+				"compone",
+				"src\\main\\scala\\scadla\\examples\\ComponentStorageBox.scala"
+			],
+			[
+				"solid.",
+				"src\\main\\scala\\scadla\\Solid.scala"
+			],
+			[
+				"key",
+				"pykeeb\\keyboard_matrix.py"
+			],
+			[
+				"pyer",
+				"pyergo60.py"
+			],
+			[
+				"listbuffe",
+				"scala\\src\\library\\scala\\collection\\mutable\\ListBuffer.scala"
+			],
+			[
+				"nel",
+				"cats\\core\\src\\main\\scala\\cats\\data\\NonEmptyList.scala"
+			],
+			[
+				"list",
+				"src\\library\\scala\\collection\\immutable\\List.scala"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "union",
+		"selected_items":
+		[
+			[
+				"union",
+				"Union"
+			],
+			[
+				"reduce",
+				"reduce"
+			],
+			[
+				"sized",
+				"Sized"
+			],
+			[
+				"traversableonce",
+				"TraversableOnce"
+			],
+			[
+				"monoid",
+				"Monoid"
+			],
+			[
+				"monoi",
+				"Monoid"
+			],
+			[
+				"nonemptylist",
+				"nonEmptyListOf"
+			],
+			[
+				"foldable",
+				"FoldableTerm"
+			],
+			[
+				"~>",
+				"^~>~^"
+			],
+			[
+				"reduceLef",
+				"reduceLeft"
+			],
+			[
+				"leftReduce",
+				"leftReducer"
+			],
+			[
+				"hlist",
+				"HList"
+			],
+			[
+				"",
+				"Keyboard_arc"
+			],
+			[
+				"ke",
+				"Keyboard_arc"
+			],
+			[
+				"keyb",
+				"Keyboard_arc"
+			],
+			[
+				"list",
+				"List"
+			],
+			[
+				"isEmpty",
+				"isEmpty"
+			]
+		],
+		"width": 1636.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"vintage":
+		{
+		}
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 330.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

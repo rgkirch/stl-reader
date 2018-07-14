@@ -30,10 +30,3 @@ f = (map tuplify)
 
 readPoints :: IO [(Float, Float, Float)]
 readPoints = readFile "standee.stl" >>= (return . f)
-    -- (\contents -> let
-    --     stripped = map (dropWhile (' ' ==)) $ lines contents
-    --     verticies = filter (startsWith "vertex") stripped
-    --     dropLeadingWord = (dropWhile (' ' ==)) . (dropWhile (' ' /=))
-    --     result = map dropLeadingWord verticies
-    --     in
-    --     map g result

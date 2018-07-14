@@ -18,14 +18,17 @@ hasVertex = startsWith "vertex"
 dropPrefix :: String -> String
 dropPrefix = dropWhile (' ' ==) . dropWhile (' ' /=)
 
-f :: String -> String
-f = unlines
+tuplify :: String -> (Float, Float, Float)
+tuplify = (\(a:b:c:_) -> (a, b, c)) . (map read) . words
+
+f :: String -> [(Float, Float, Float)]
+f = (map tuplify)
     . (map dropPrefix)
     . (filter hasVertex)
     . (map $ dropWhile (' '==))
     . lines
 
-readPoints :: IO String
+readPoints :: IO [(Float, Float, Float)]
 readPoints = readFile "standee.stl" >>= (return . f)
     -- (\contents -> let
     --     stripped = map (dropWhile (' ' ==)) $ lines contents

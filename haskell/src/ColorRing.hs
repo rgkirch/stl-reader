@@ -6,18 +6,22 @@ import Graphics.Rendering.OpenGL
 import Graphics.UI.GLUT
 import Cube
 
-colorRing :: IORef (Maybe Size) -> IO ()
-colorRing currentWindowSize = do
-  Just (Size w h) <- get currentWindowSize
+colorRing :: IORef (Maybe Size) -> IORef Float -> IO ()
+colorRing currentWindowSize angle = do
   clearColor $= Color4 0.2 0.4 0.4 1
   clear [ColorBuffer]
+  loadIdentity
+  Just (Size w h) <- get currentWindowSize
   currentColor $= Color4 1.0 1.0 0.5 1
   putStrLn $ show w ++ " " ++ show h
-  forM_ (points 100) $ \(x,y,z) ->
+  a <- get angle
+  rotate a $ Vector3 0 0 1
+  forM_ (points 12) $ \(x,y,z) ->
     preservingMatrix $ do
       color $ Color3 x y z
       translate $ Vector3 x y z
       cube 0.1
+  swapBuffers
   flush
 
   -- putStrLn $ (show w) ++  (show h)

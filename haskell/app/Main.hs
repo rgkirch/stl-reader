@@ -53,16 +53,24 @@ keyboard (Char '\ESC') Up _ _ =
 --   postRedisplay Nothing
 keyboard _ _ _ _ = return ()
 
+idle :: IORef Float -> IdleCallback
+idle angle = do
+  angle $~! (+ 0.1)
+  postRedisplay Nothing
+
 main :: IO ()
 main = do
   getArgsAndInitialize
+  initialDisplayMode $= [DoubleBuffered]
   createWindow "stl-render"
   windowSize $= Size 800 500
   -- x <- get screenSize
   -- radius <- newIORef (0.1::GLfloat)
+  angle <- newIORef 0.0
   currentWindowSize <- newIORef (Nothing :: Maybe Size)
-  displayCallback $= colorRing currentWindowSize
+  displayCallback $= colorRing currentWindowSize angle
   reshapeCallback $= Just (reshape currentWindowSize)
+  idleCallback $= Just (idle angle)
   keyboardMouseCallback $= Just keyboard
   mainLoop
 

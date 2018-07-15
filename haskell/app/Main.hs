@@ -55,23 +55,31 @@ keyboard _ _ _ _ = return ()
 
 idle :: IORef Float -> IdleCallback
 idle angle = do
-  angle $~! (+ 0.1)
+  -- angle $~ (+ 0.05)
+  a <- get angle
+  putStrLn $ show a
   postRedisplay Nothing
+
+passiveMouse :: IORef Float -> Position -> IO ()
+passiveMouse angle (Position x y) = do
+  angle $= fromIntegral x
 
 main :: IO ()
 main = do
   getArgsAndInitialize
-  initialDisplayMode $= [DoubleBuffered]
+  initialDisplayMode $= [WithDepthBuffer, DoubleBuffered]
   createWindow "stl-render"
   windowSize $= Size 800 500
   -- x <- get screenSize
   -- radius <- newIORef (0.1::GLfloat)
   angle <- newIORef 0.0
   currentWindowSize <- newIORef (Nothing :: Maybe Size)
+  depthFunc $= Just Less
   displayCallback $= colorRing currentWindowSize angle
   reshapeCallback $= Just (reshape currentWindowSize)
-  idleCallback $= Just (idle angle)
+  -- idleCallback $= Just (idle angle)
   keyboardMouseCallback $= Just keyboard
+  passiveMotionCallback $= Just (passiveMouse angle)
   mainLoop
 
 -- todo

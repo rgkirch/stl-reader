@@ -8,21 +8,24 @@ import Cube
 
 colorRing :: IORef (Maybe Size) -> IORef Float -> IO ()
 colorRing currentWindowSize angle = do
-  clearColor $= Color4 0.2 0.4 0.4 1
-  clear [ColorBuffer]
   loadIdentity
+  clearColor $= Color4 0.2 0.4 0.4 1
+  clear [ColorBuffer, DepthBuffer]
   Just (Size w h) <- get currentWindowSize
   currentColor $= Color4 1.0 1.0 0.5 1
   putStrLn $ show w ++ " " ++ show h
   a <- get angle
+  putStrLn $ show a
+  scale 0.5 0.5 (0.5::GLfloat)
   rotate a $ Vector3 0 0 1
   forM_ (points 12) $ \(x,y,z) ->
     preservingMatrix $ do
       color $ Color3 x y z
       translate $ Vector3 x y z
-      cube 0.1
+      cubeFrame 0.1
   swapBuffers
   flush
+  postRedisplay Nothing
 
   -- putStrLn $ (show w) ++  (show h)
   -- mapM_ vertex$Vertex3 ([x <- ])

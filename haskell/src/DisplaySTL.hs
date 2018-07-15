@@ -16,10 +16,10 @@ displaySTL points currentWindowSize anglx angly = do
   currentColor $= Color4 1.0 1.0 0.5 1
   ax <- get anglx
   ay <- get angly
-  translate (Vector3 0 0 (2::GLfloat))
-  scale 0.1 0.1 (0.1::GLfloat)
+  scale 0.05 0.05 (0.05::GLfloat)
   rotate ax $ Vector3 0 1 0
   rotate ay $ Vector3 1 0 0
+  translate (Vector3 0 0 (2::GLfloat))
   renderPrimitive Triangles $ mapM_ vertex3f points
   swapBuffers
   flush

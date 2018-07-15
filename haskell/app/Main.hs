@@ -7,6 +7,7 @@ import Lib
 import Data.IORef
 import Graphics.Rendering.OpenGL
 import Graphics.UI.GLUT
+import System.Exit
 
 myPoints :: [(GLfloat, GLfloat, GLfloat)]
 myPoints =
@@ -32,9 +33,43 @@ displayPoints radius = preservingMatrix $ do
 reshape :: IORef (Maybe Size) -> Size -> IO ()
 reshape currentWindowSize s = do
   currentWindowSize $= Just s
-  putStrLn $ show s
+  putStrLn $ "window resized to " ++ show s
   viewport $= (Position 0 0, s)
 
+quit :: IO()
+quit = do
+  exitWith ExitSuccess
+
+keyboard :: Key -> KeyState -> Modifiers -> Position -> IO()
+keyboard (Char '\ESC') Up _ _ =
+  quit
+-- keyboard radius (Char '+') Down _ _ = do
+--   r <- get radius
+--   radius $= r + 0.05
+--   postRedisplay Nothing
+-- keyboard radius (Char '-') Down _ _ = do
+--   r <- get radius
+--   radius $= r - 0.05
+--   postRedisplay Nothing
+keyboard _ _ _ _ = return ()
+
+main :: IO ()
+main = do
+  getArgsAndInitialize
+  createWindow "stl-render"
+  windowSize $= Size 800 500
+  -- x <- get screenSize
+  -- radius <- newIORef (0.1::GLfloat)
+  currentWindowSize <- newIORef (Nothing :: Maybe Size)
+  displayCallback $= colorRing currentWindowSize
+  reshapeCallback $= Just (reshape currentWindowSize)
+  keyboardMouseCallback $= Just keyboard
+  mainLoop
+
+-- todo
+--   get input from mouse
+--   control the camera
+--   use viewport to display a front, side, and top view of the thing
 
 
 -- type KeyboardMouseCallback =
@@ -53,31 +88,3 @@ reshape currentWindowSize s = do
 
 -- data Modifiers = Modifiers { shift, ctrl, alt :: KeyState }
 --   deriving ( Eq, Ord, Show )
-
-keyboard radius (Char '+') Down _ _ = do
-  r <- get radius
-  radius $= r + 0.05
-  postRedisplay Nothing
-keyboard radius (Char '-') Down _ _ = do
-  r <- get radius
-  radius $= r - 0.05
-  postRedisplay Nothing
-keyboard _ _ _ _ _ = return ()
-
-main :: IO ()
-main = do
-  getArgsAndInitialize
-  createWindow "stl-render"
-  windowSize $= Size 800 500
-  -- x <- get screenSize
-  -- radius <- newIORef (0.1::GLfloat)
-  currentWindowSize <- newIORef (Nothing :: Maybe Size)
-  displayCallback $= colorRing
-  reshapeCallback $= Just (reshape currentWindowSize)
-  keyboardMouseCallback $= Nothing
-  mainLoop
-
--- todo
---   get input from mouse
---   control the camera
---   use viewport to display a front, side, and top view of the thing

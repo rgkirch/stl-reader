@@ -1,9 +1,11 @@
 module Main where
 
+import Cube
+import ColorRing
+import Vertex
 import Lib
 import Data.IORef
 import Graphics.Rendering.OpenGL
--- import Graphics.GLUtil
 import Graphics.UI.GLUT
 
 myPoints :: [(GLfloat, GLfloat, GLfloat)]
@@ -27,7 +29,11 @@ displayPoints radius = preservingMatrix $ do
   loadIdentity
   flush
 
-reshape s = viewport $= (Position 0 0, s)
+reshape :: IORef (Maybe Size) -> Size -> IO ()
+reshape currentWindowSize s = do
+  currentWindowSize $= Just s
+  putStrLn $ show s
+  viewport $= (Position 0 0, s)
 
 -- type KeyboardMouseCallback =
   -- Key -> KeyState -> Modifiers -> Position -> IO ()
@@ -62,10 +68,12 @@ main = do
   createWindow "stl-render"
   windowSize $= Size 800 500
   -- x <- get screenSize
-  radius <- newIORef (0.1::GLfloat)
-  displayCallback $= displayPoints radius
-  reshapeCallback $= Just reshape
-  keyboardMouseCallback $= Just (keyboard radius)
+  -- radius <- newIORef (0.1::GLfloat)
+  currentWindowSize <- newIORef (Nothing :: Maybe Size)
+  displayCallback $= colorRing
+  let myReshape = reshape currentWindowSize
+  reshapeCallback $= Just myReshape
+  keyboardMouseCallback $= Nothing
   mainLoop
 
 -- todo

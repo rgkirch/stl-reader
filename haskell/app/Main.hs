@@ -1,22 +1,14 @@
 module Main where
 
+import ReadSTL
+import DisplaySTL
 import Cube
 import ColorRing
 import Vertex
-import Lib
 import Data.IORef
 import Graphics.Rendering.OpenGL
 import Graphics.UI.GLUT
 import System.Exit
-
-myPoints :: [(GLfloat, GLfloat, GLfloat)]
-myPoints =
-  [ (-0.25, 0.25, 0.0)
-  ,(0.75, 0.35, 0.0)
-  ,(0.75, -0.15, 0.0)
-  ,(0.75, -0.15, 0.0)
-  ,(-0.75, -0.25, 0.0)
-  ,(-0.25, 0.25, 0.0) ]
 
 displayPoints :: IORef GLfloat -> IO ()
 displayPoints radius = preservingMatrix $ do
@@ -53,13 +45,6 @@ keyboard (Char '\ESC') Up _ _ =
 --   postRedisplay Nothing
 keyboard _ _ _ _ = return ()
 
-idle :: IORef Float -> IdleCallback
-idle angle = do
-  -- angle $~ (+ 0.05)
-  a <- get angle
-  putStrLn $ show a
-  postRedisplay Nothing
-
 passiveMouse :: IORef Float -> IORef Float -> Position -> IO ()
 passiveMouse anglx angly (Position x y) = do
   anglx $= fromIntegral x
@@ -71,21 +56,18 @@ main = do
   initialDisplayMode $= [WithDepthBuffer, DoubleBuffered]
   createWindow "stl-render"
   windowSize $= Size 800 500
-  -- x <- get screenSize
-  -- radius <- newIORef (0.1::GLfloat)
   anglx <- newIORef 0.0
   angly <- newIORef 0.0
   currentWindowSize <- newIORef (Nothing :: Maybe Size)
   depthFunc $= Just Less
-  displayCallback $= colorRing currentWindowSize anglx angly
+  points <- get readPoints
+  displayCallback $= displaySTL points currentWindowSize anglx angly
   reshapeCallback $= Just (reshape currentWindowSize)
-  -- idleCallback $= Just (idle angle)
   keyboardMouseCallback $= Just keyboard
   passiveMotionCallback $= Just (passiveMouse anglx angly)
   mainLoop
 
 -- todo
---   get input from mouse
 --   control the camera
 --   use viewport to display a front, side, and top view of the thing
 

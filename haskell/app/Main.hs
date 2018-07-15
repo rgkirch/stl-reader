@@ -35,6 +35,8 @@ reshape currentWindowSize s = do
   putStrLn $ show s
   viewport $= (Position 0 0, s)
 
+
+
 -- type KeyboardMouseCallback =
   -- Key -> KeyState -> Modifiers -> Position -> IO ()
 
@@ -71,8 +73,7 @@ main = do
   -- radius <- newIORef (0.1::GLfloat)
   currentWindowSize <- newIORef (Nothing :: Maybe Size)
   displayCallback $= colorRing
-  let myReshape = reshape currentWindowSize
-  reshapeCallback $= Just myReshape
+  reshapeCallback $= Just (reshape currentWindowSize)
   keyboardMouseCallback $= Nothing
   mainLoop
 

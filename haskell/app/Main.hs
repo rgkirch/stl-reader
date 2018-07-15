@@ -60,9 +60,10 @@ idle angle = do
   putStrLn $ show a
   postRedisplay Nothing
 
-passiveMouse :: IORef Float -> Position -> IO ()
-passiveMouse angle (Position x y) = do
-  angle $= fromIntegral x
+passiveMouse :: IORef Float -> IORef Float -> Position -> IO ()
+passiveMouse anglx angly (Position x y) = do
+  anglx $= fromIntegral x
+  angly $= fromIntegral y
 
 main :: IO ()
 main = do
@@ -72,14 +73,15 @@ main = do
   windowSize $= Size 800 500
   -- x <- get screenSize
   -- radius <- newIORef (0.1::GLfloat)
-  angle <- newIORef 0.0
+  anglx <- newIORef 0.0
+  angly <- newIORef 0.0
   currentWindowSize <- newIORef (Nothing :: Maybe Size)
   depthFunc $= Just Less
-  displayCallback $= colorRing currentWindowSize angle
+  displayCallback $= colorRing currentWindowSize anglx angly
   reshapeCallback $= Just (reshape currentWindowSize)
   -- idleCallback $= Just (idle angle)
   keyboardMouseCallback $= Just keyboard
-  passiveMotionCallback $= Just (passiveMouse angle)
+  passiveMotionCallback $= Just (passiveMouse anglx angly)
   mainLoop
 
 -- todo

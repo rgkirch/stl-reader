@@ -62,7 +62,7 @@ main = do
   currentWindowSize <- newIORef (Nothing :: Maybe Size)
   depthFunc $= Just Less
   points <- get readPoints
-  displayCallback $= displaySTL points currentWindowSize anglx angly
+  displayCallback $= displaySTL points anglx angly
   reshapeCallback $= Just (reshape currentWindowSize)
   keyboardMouseCallback $= Just keyboard
   passiveMotionCallback $= Just (passiveMouse anglx angly)

@@ -58,6 +58,7 @@ main = do
   windowSize $= Size 800 500
   anglx <- newIORef 0.0
   angly <- newIORef 0.0
+
   currentWindowSize <- newIORef (Nothing :: Maybe Size)
   depthFunc $= Just Less
   points <- get readPoints
@@ -65,6 +66,14 @@ main = do
   reshapeCallback $= Just (reshape currentWindowSize)
   keyboardMouseCallback $= Just keyboard
   passiveMotionCallback $= Just (passiveMouse anglx angly)
+  matrixMode $= Projection
+  loadIdentity
+  let near   = 1
+      far    = 40
+      right  = 1
+      top    = 1
+  frustum (-right) right (-top) top near far
+  matrixMode $= Modelview 0
   mainLoop
 
 -- todo

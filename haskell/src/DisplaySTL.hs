@@ -19,10 +19,13 @@ displaySTL points currentWindowSize anglx angly = do
   scale 0.05 0.05 (0.05::GLfloat)
   rotate ax $ Vector3 0 1 0
   rotate ay $ Vector3 1 0 0
-  translate (Vector3 0 0 (2::GLfloat))
+  translate (Vector3 0 0 (-10::GLfloat))
   renderPrimitive Triangles $ mapM_ vertex3f points
   swapBuffers
   flush
   postRedisplay Nothing
 
--- use the points from ReadSTL.readPoints and show a wireframe of the triangles
+-- color :: (Vector3, Vector3, Vector3)
+-- color
+
+-- add shading

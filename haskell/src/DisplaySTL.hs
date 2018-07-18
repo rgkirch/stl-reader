@@ -29,3 +29,4 @@ displaySTL points currentWindowSize anglx angly = do
 -- color
 
 -- add shading
+

@@ -1,7 +1,8 @@
-import Lib
+import qualified ReadPointsSpec
+import qualified LinearSpec
 
-printIt :: (Float, Float, Float) -> String
-printIt = undefined
 
 main :: IO ()
-main = readPoints >>= (putStrLn . unlines . (map show))
+main = do
+  -- ReadPointsSpec.main
+  LinearSpec.main

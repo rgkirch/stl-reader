@@ -2,8 +2,7 @@ module ReadPointsSpec where
 
 import ReadSTL
 
-printIt :: (Float, Float, Float) -> String
-printIt = undefined
+main :: IO [(Float, Float, Float)]
+main = readFile "standee.stl" >>= (return . parsePoints)
 
-main :: IO ()
-main = readPoints >>= (putStrLn . unlines . (map show))
+-- readPoints >>= (putStrLn . unlines . (map show))

@@ -1,5 +1,5 @@
 module ReadSTL
-    ( readPoints
+    ( parsePoints
     ) where
 
 import qualified Data.Text as T
@@ -21,12 +21,10 @@ dropPrefix = dropWhile (' ' ==) . dropWhile (' ' /=)
 tuplify :: String -> (Float, Float, Float)
 tuplify = (\(a:b:c:_) -> (a, b, c)) . (map read) . words
 
-f :: String -> [(Float, Float, Float)]
-f = (map tuplify)
+parsePoints :: String -> [(Float, Float, Float)]
+parsePoints = (map tuplify)
     . (map dropPrefix)
     . (filter hasVertex)
     . (map $ dropWhile (' '==))
     . lines
 
-readPoints :: IO [(Float, Float, Float)]
-readPoints = readFile "standee.stl" >>= (return . f)

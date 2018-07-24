@@ -1,5 +1,6 @@
 module Main where
 
+import Debug.Trace(trace)
 import ReadSTL
 import DisplaySTL
 import Cube
@@ -53,25 +54,26 @@ main :: IO ()
 main = do
     getArgsAndInitialize
     initialDisplayMode $= [WithDepthBuffer, DoubleBuffered]
-    createWindow "stl-render"
+    createWindow "stl-renderer"
     windowSize $= Size 800 500
     anglx <- newIORef 0.0
     angly <- newIORef 0.0
 
     currentWindowSize <- newIORef (Nothing :: Maybe Size)
     depthFunc $= Just Less
-    points <- readFile "standee.stl" >>= (return . parsePoints)
+    points <- readFile "../resources/CSG-modules.stl" >>= (return . parsePoints)
+    -- putStrLn $ unlines $ map show points
     displayCallback $= displaySTL points anglx angly
     reshapeCallback $= Just (reshape currentWindowSize)
     keyboardMouseCallback $= Just keyboard
     passiveMotionCallback $= Just (passiveMouse anglx angly)
     matrixMode $= Projection
     loadIdentity
-    let near   = 1
-        far    = 40
-        right  = 1
-        top    = 1
-    frustum (-right) right (-top) top near far
+    -- let near   = 1
+    --     far    = 40
+    --     right  = 1
+    --     top    = 1
+    -- frustum (-right) right (-top) top near far
     matrixMode $= Modelview 0
     mainLoop
 
